@@ -20,16 +20,13 @@ export class UserCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.serviceUser.handleNomInput$.subscribe((data) => {
-      console.log('received _nom', data);
       this._nom = data;
     });
     this.serviceUser.handlePrenomInput$.subscribe((data) => {
-      console.log('received _prenom', data);
       this._prenom = data;
     });
   }
   handleMinus() {
-    console.log(this._nombre_enfants);
     if (this._nombre_enfants == 0) {
       this._snackBar.open('Impossible operation !!', 'ERROR', {
         duration: 500,

@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
   LoadListUsersFromJson() {
     this.serviceUser.loadListOfUsers().subscribe((res) => {
       this.listUsers = res;
-      console.log(this.listUsers);
     });
     this._snackBar.open('Loading List Users !!', 'LOADING', {
       duration: 1000,
@@ -41,9 +40,7 @@ export class AppComponent implements OnInit {
     this.sideBarOpen = !this.sideBarOpen;
   }
   onClickUser(u: User) {
-    console.log('userToSend', u);
     this.slideSideBar = true;
-
     this.showDetails = true;
     this.serviceUser.sendUser.next(u);
     this.sideBarOpen = true;

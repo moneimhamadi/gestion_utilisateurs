@@ -15,31 +15,25 @@ export class ConfigSideBarComponent implements OnInit {
   constructor(private userService: ApiUsersService) {}
 
   ngOnInit(): void {
-    console.log(this.userSelected?._nombre_enfants);
     this.userService.sendUser$.subscribe((data) => {
       this.userSelected = data;
-      console.log('user received', this.userSelected);
     });
 
     this.userService.handleMinusNbr$.subscribe((data) => {
-      console.log('after minus', data);
       this.userSelected._nombre_enfants = data;
     });
     this.userService.handlePlusNbr$.subscribe((data) => {
-      console.log('after plus', data);
       this.userSelected._nombre_enfants = data;
     });
 
     //inputs get values
     var inputNom = document.getElementById('inputnom');
     inputNom.addEventListener('input', (event) => {
-      console.log((<HTMLInputElement>inputNom).value);
       let nameTosend = (<HTMLInputElement>inputNom).value;
       this.userService.handleNomInput.next(nameTosend);
     });
     var inputPrenom = document.getElementById('inputprenom');
     inputPrenom.addEventListener('input', (event) => {
-      console.log((<HTMLInputElement>inputPrenom).value);
       let prenameTosend = (<HTMLInputElement>inputPrenom).value;
       this.userService.handlePrenomInput.next(prenameTosend);
     });
