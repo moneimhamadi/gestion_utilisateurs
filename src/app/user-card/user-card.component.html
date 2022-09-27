@@ -1,0 +1,22 @@
+
+<div class="card">
+  <mat-icon class="icon-trash" title="delete user"> delete icon</mat-icon>
+
+  <img class="card-img-top" src="/assets/user.png" alt="Card image cap" />
+  <div class="card-body">
+    <div class="form-group">
+      <label class="label">Nom</label>
+      <input type="text" disabled [value]="_nom" />
+    </div>
+    <div class="form-group">
+      <label class="label">Prénom</label>
+      <input type="text" disabled [value]="_prenom" />
+    </div>
+
+    <div *ngIf="showDetails">
+    <label class="label">Nombre Enfants</label>
+    <input type="text" width="20px" [value]="_nombre_enfants" />
+    <button class="plusminus" title="Minus" (click)="handleMinus()">-</button>
+    <button class="plusminus" title="Plus" (click)="handlePlus()">+</button></div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+mat-drawer {
+  width: 350px;
+}
+mat-drawer-container {
+  height: 100%;
+  background-color: white;
+}
+
+mat-drawer {
+  background: #2b65ec;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+#addBtn {
+  float: left;
+  left: 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+#loadBtn {
+  float: right;
+  right: 0;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+.addload{
+    background-color:red ;
+}
+ 
+  .example-spacer {
+    flex: 1 1 auto;
+  }

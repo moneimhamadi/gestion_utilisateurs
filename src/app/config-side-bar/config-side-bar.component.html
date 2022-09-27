@@ -1,0 +1,20 @@
+<div style="margin-top: 60px" >
+  <h1 style="color: white; text-align: center; font-weight: bold" >
+    <mat-icon>settings</mat-icon>Configuration
+  </h1>
+</div>
+
+<div class="configInputs">
+  <div>
+    <label class="label">Nom</label>
+    <input type="text" [value]="userSelected?._nom" name="iname" id='inputnom' />
+  </div>
+  <div>
+    <label class="label">Prénom</label>
+    <input type="text" [value]="userSelected?._prenom"name="iprenom" id="inputprenom"/>
+  </div>
+  <label class="label">Nombre Enfants</label>
+  <label class="disLabel" >{{
+    userSelected?._nombre_enfants
+  }}</label>
+</div>

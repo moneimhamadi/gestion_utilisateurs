@@ -1,0 +1,45 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-config-side-bar></app-config-side-bar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div>
+      <div class="card-deck" style="margin-left: 80px">
+        <mat-toolbar>
+          <mat-toolbar-row class="justify-content-between" *ngIf="slideSideBar">
+            <button
+              mat-icon-button
+              (click)="toggleSidebar()"
+              title="Configuration"
+            >
+              <mat-icon>menu</mat-icon>
+            </button>
+          </mat-toolbar-row>
+          <mat-toolbar-row>
+            <button class="btn btn-primary" id="addBtn"><mat-icon>add</mat-icon>ADD</button>
+            <span class="example-spacer"></span>
+            <button
+              id="loadBtn"
+              class="btn btn-secondary"
+              (click)="LoadListUsersFromJson()"
+            >
+              LOAD<mat-icon>refresh</mat-icon>
+            </button>
+          </mat-toolbar-row>
+        </mat-toolbar>
+
+        <div class="card-group">
+          <app-user-card
+            *ngFor="let u of listUsers; let i = index"
+            _nom="{{ u._nom }}"
+            _prenom="{{ u._prenom }}"
+            _nombre_enfants="{{ u._nombre_enfants }}"
+            [showDetails]="showDetails"
+            (click)="onClickUser(u)"
+          ></app-user-card>
+        </div>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

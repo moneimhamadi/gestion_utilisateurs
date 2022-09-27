@@ -1,0 +1,26 @@
+.input, .label {
+    display:block;
+}
+
+input,label{
+  font-size: 20px;
+  border-radius: 5px;
+}
+.card{
+  margin: 10px;
+  max-width: 440px;
+ 
+}
+.card:hover{
+  background-color: rgb(232, 232, 232);
+  cursor: pointer;
+}
+
+.icon-trash{
+  font-size: 50px;
+  float: right;
+}
+.plusminus{
+  cursor: pointer;
+  width: 30px;  
+}
